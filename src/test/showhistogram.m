@@ -1,0 +1,23 @@
+addpath('../../digitalImage/size256256'); % addpath('../../digitalImage');
+covername = 'IMG-0001-00001.jpg';
+rgbImage = imread(covername);
+origin = rgb2gray(rgbImage);
+logistic = imread('stegoLogisticMap.png');
+cat = imread('stegoCatMap.png');
+mix = imread('stegoMixMap.png');
+[rows, columns, numberOfColorChannels] = size(origin);
+imhist(origin);
+figure;imhist(logistic);
+figure;imhist(cat);
+figure;imhist(mix);
+% histogram color image
+% Image = logistic;
+% [m,n,r]=size(Image);
+% rgb=zeros(m,n,3);
+% rgb(:,:,1)=Image;
+% rgb(:,:,2)=rgb(:,:,1);
+% rgb(:,:,3)=rgb(:,:,1);
+% Image=rgb/255;
+% % imhist(rgbImage);
+% % imhist(Image);
+% imwrite(Image,'stegoLMColor.jpg');

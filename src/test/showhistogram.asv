@@ -1,0 +1,4 @@
+addpath('../../digitalImage/size256256'); % addpath('../../digitalImage');
+covername = 'IMG-0001-00001.jpg';
+origin = imread(covername);
+logistic = imread('stegoLogisticMap.png');

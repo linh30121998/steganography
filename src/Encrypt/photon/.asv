@@ -1,0 +1,17 @@
+clear;
+m = [0 0 0 0 0];
+[~,length] = size(m);
+% convert to 2D matrix nx5
+column = ceil(length/5);
+lengthpad = column*5-length;
+if( lengthpad ) 
+    padding = zeros(1,lengthpad);
+    m = [m,padding];
+    m = reshape(m,5,column)';
+end
+c = [0 0 0 0 0; 0 0 0 0 0; 0 0 0 0 1; 4 1 4 1 0];
+for i = 1:column 
+    S = [m(i,:);c]; % test vector
+input = S;
+hashS = hashPhoton(S);
+end 
